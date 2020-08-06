@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
 
 :root{
-  --primary: #efb6b2;
+  --primary: hsl(4, 71%, 52%);
   --secondary: #4e4e4e;
   --error: #ff4a4a;
 }
@@ -17,7 +17,7 @@ body{
 }
 .title h1{
   color: var(--primary);
-  font-size: 1.2rem;
+  font-size: 1.2 rem;
   letter-spacing: 2px;
   font-weight: normal;
 }
@@ -27,6 +27,9 @@ body{
 .title h2{
   margin-top: 60px;
   font-size: 2.6rem;
+}
+.title Navbar{
+  background-color: hsl(4, 71%, 52%);
 }
 
 /* upload form styles */
@@ -41,15 +44,15 @@ label input{
 }
 label{
   display: block;
-  width: 30px;
-  height: 30px;
-  border: 1px solid var(--primary);
+  width: 60px;
+  height: 60px;
+  border: 8px solid var(--primary);
   border-radius: 50%;
   margin: 10px auto;
   line-height: 30px;
   color: var(--primary);
   font-weight: bold;
-  font-size: 24px;
+  font-size: 30px;
 }
 label:hover{
   background: var(--primary);
@@ -57,7 +60,7 @@ label:hover{
 }
 .output{
   height: 60px;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
 }
 .error{
   color: var(--error);
