@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import ProgressBar from './ProgressBar';
+import { Form } from 'react-bootstrap';
 
 const UploadForm = () => {
 
@@ -22,17 +23,29 @@ const UploadForm = () => {
     }
 
     return (
-        <form>
-            <label>
-                <input type ="file" onChange = { changeHandler }/>
-                <span>+</span>
-            </label>
-            <div className="output">
-                { error && <div className="error">{error} </div> }
-                { file && <div>{file.name}</div> }
-                { file && <ProgressBar file ={file} setFile={setFile}/> }
-            </div>
-        </form>
+        // <form>
+        //     <label>
+        //         <input type ="file" onChange = { changeHandler }/>
+        //         <span>+</span>
+        //     </label>
+        //     <div className="output">
+        //         { error && <div className="error">{error} </div> }
+        //         { file && <div>{file.name}</div> }
+        //         { file && <ProgressBar file ={file} setFile={setFile}/> }
+        //     </div>
+        // </form>
+        <div className = "container">
+            <Form>
+                <Form.Group>
+                    <Form.File id="exampleFormControlFile1" label="Add an image" onChange= { changeHandler } />
+                </Form.Group>
+                <div className="output">
+                    { error && <div className="error">{error} </div> }
+                    { file && <div>{file.name}</div> }
+                    { file && <ProgressBar file ={file} setFile={setFile}/> }
+                </div>
+            </Form>
+        </div>
     )
 }
 
