@@ -10,11 +10,13 @@ function App() {
   const { authenticated } = useAuth();
 
   return (
-    <div className="App container">
-      <Title/>
-      { authenticated && <UploadForm /> }
-      <ImageGrid setSelectedImg={setSelectedImg}/>
-      { selectedImg && <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg}/>}
+    <div className='App container'>
+      <Title />
+      {authenticated && <UploadForm />}
+      <ImageGrid setSelectedImg={setSelectedImg} />
+      {selectedImg && (
+        <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
+      )}
     </div>
   );
 }
