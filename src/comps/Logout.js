@@ -13,7 +13,7 @@ const Logout = () => {
   return (
     <div>
       {authenticated && (
-        <Button variant='danger' onClick={(e) => userLogout(e)}>
+        <Button className='col-but' onClick={(e) => userLogout(e)}>
           Logout
         </Button>
       )}

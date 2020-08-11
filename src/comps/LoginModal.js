@@ -7,7 +7,7 @@ const LoginModal = () => {
   const [show, setShow] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { authenticated } = useAuth;
+  const { account } = useAuth;
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -29,8 +29,8 @@ const LoginModal = () => {
 
   return (
     <>
-      {!authenticated && (
-        <Button variant='success' onClick={handleShow}>
+      {!account && (
+        <Button className='col-but' onClick={handleShow}>
           {' '}
           Login{' '}
         </Button>

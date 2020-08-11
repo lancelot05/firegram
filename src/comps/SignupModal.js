@@ -27,7 +27,7 @@ const SignupModal = () => {
 
   return (
     <>
-      <Button variant='primary' onClick={handleShow}>
+      <Button className='col-but' onClick={handleShow}>
         Signup
       </Button>
 

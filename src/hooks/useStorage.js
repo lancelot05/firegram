@@ -4,6 +4,7 @@ import {
   projectFirestore,
   timestamp,
 } from '../firebase/config';
+import { projectAuth } from '../firebase/config';
 
 const useStorage = (file) => {
   const [progress, setProgress] = useState(0);
@@ -28,6 +29,8 @@ const useStorage = (file) => {
         collectionRef.add({
           url: url,
           createdAt: timestamp(),
+          uploadederId: projectAuth.currentUser.uid,
+          uploadedBy: projectAuth.currentUser.email,
         });
         setUrl(url);
       }
