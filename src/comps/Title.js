@@ -4,8 +4,11 @@ import SignupModal from './SignupModal';
 import Logout from './Logout';
 import LoginModal from './LoginModal';
 import AccountDetails from './AccountDetails';
+import useAuth from '../hooks/useAuth';
+import BootstrapSwitchButton from 'bootstrap-switch-button-react';
 
-const Title = () => {
+const Title = ({ toggle, setToggle }) => {
+  const { account } = useAuth();
   return (
     <div className='title'>
       <Navbar className='container Navbar' variant='dark' expand='md'>
@@ -31,6 +34,33 @@ const Title = () => {
             <Nav.Item className='container mb-2 mt-2'>
               <AccountDetails />
             </Nav.Item>
+            {account && (
+              // <Nav.Item className='container mb-2 mt-2'>
+              //   <Button className='col-but' onClick={() => setToggle(!toggle)}>
+              //     {' '}
+              //     Yours{' '}
+              //   </Button>
+              // </Nav.Item>
+              <Nav.Item className='container mb-2 mt-2'>
+                {/* <ToggleButton
+                  type='radio'
+                  value={toggle}
+                  onClick={() => setToggle(!toggle)}
+                >
+                  Yours
+                </ToggleButton> */}
+                <BootstrapSwitchButton
+                  checked={toggle}
+                  onChange={() => setToggle(!toggle)}
+                  onstyle='success'
+                  offstyle='info'
+                  onlabel='Yours'
+                  offlabel='All'
+                  width={100}
+                />
+              </Nav.Item>
+            )}
+
             <Nav.Item className='container mb-2 mt-2'>
               <Logout />
             </Nav.Item>

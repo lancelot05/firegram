@@ -7,13 +7,14 @@ import useAuth from './hooks/useAuth';
 
 function App() {
   const [selectedImg, setSelectedImg] = useState(null);
+  const [toggle, setToggle] = useState(false);
   const { authenticated } = useAuth();
 
   return (
     <div className='App container'>
-      <Title />
+      <Title toggle={toggle} setToggle={setToggle} />
       {authenticated && <UploadForm />}
-      <ImageGrid setSelectedImg={setSelectedImg} />
+      <ImageGrid toggle={toggle} setSelectedImg={setSelectedImg} />
       {selectedImg && (
         <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
       )}

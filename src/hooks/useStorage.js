@@ -29,7 +29,7 @@ const useStorage = (file) => {
         collectionRef.add({
           url: url,
           createdAt: timestamp(),
-          uploadederId: projectAuth.currentUser.uid,
+          uploaderId: projectAuth.currentUser.uid,
           uploadedBy: projectAuth.currentUser.email,
         });
         setUrl(url);
